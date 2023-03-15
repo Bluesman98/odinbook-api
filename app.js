@@ -14,6 +14,16 @@ var usersRouter = require("./routes/users");
 
 var app = express();
 
+const cors = require('cors')
+
+// enabling CORS for some specific origins only.
+let corsOptions = {
+   origin : ['http://localhost:3001'],
+   origin : ['https://bluesman98.github.io'],
+}
+
+app.use(cors(corsOptions))
+
 //Socket.io server
 
 const http = require("http");
