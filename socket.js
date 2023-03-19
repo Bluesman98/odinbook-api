@@ -1,15 +1,13 @@
-
-const { Server } = require("socket.io");
 const PORT = process.env.PORT || 3000;
 //Socket.io server
 
  socket = function (server){
-const io = new Server(server, {
-  cors: {
-    origin: [PORT,"http://localhost:3001","https://bluesman98.github.io"],
-    methods: ["GET", "POST"],
-  },
-});
+  const io = require("socket.io")(server, {
+    cors: {
+      origin: [ process.env.PORT, "http://localhost:3001", 'https://bluesman98.github.io' ],
+      methods: ["GET", "POST"]
+    }
+  });
 io.on("connection", (socket) => {
   console.log(`User Connected: ${socket.id}`);
 
