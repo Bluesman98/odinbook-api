@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 3000;
  socket = function (server){
 const io = new Server(server, {
   cors: {
-    origin: PORT,
+    origin: [PORT,"http://localhost:3001","https://bluesman98.github.io"],
     methods: ["GET", "POST"],
   },
 });
