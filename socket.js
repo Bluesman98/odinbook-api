@@ -4,7 +4,7 @@ const PORT = process.env.PORT || 3000;
  socket = function (server){
   const io = require("socket.io")(server, {
     cors: {
-      origin: [ process.env.PORT, "http://localhost:3001", 'https://bluesman98.github.io' ],
+      origin: '*',
       methods: ["GET", "POST"]
     }
   });
