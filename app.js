@@ -19,7 +19,7 @@ const cors = require('cors')
 // enabling CORS for some specific origins only.
 
 app.use(
-  cors({origin: ['http://localhost:3000', 'https://bluesman98.github.io/odinbook/']})
+  cors({origin: ['https://bluesman98.github.io']})
 );
 
 
